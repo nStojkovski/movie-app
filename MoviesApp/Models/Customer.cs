@@ -18,6 +18,7 @@ namespace MoviesApp.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Date of birth")]
+        [Min18YearsIfMember]
         public DateTime? Birthday { get; set; }
     }
 }
