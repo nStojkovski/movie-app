@@ -92,27 +92,6 @@ namespace MoviesApp.Controllers
 
         }
 
-        // GET: Movies
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shrek" };
-            var customer = new List<Customer>
-            {
-                new Customer{Name = "Niksa"},
-                new Customer{Name = "Miksa"},
-
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                CustomerList = customer
-            };
-
-            ViewBag.Movie = movie;
-            return View(viewModel);
-        }
-
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int year, byte month)
         {
